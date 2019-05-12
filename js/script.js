@@ -1,21 +1,19 @@
-// console.log("js is working");
-
 //function: find max value of a number list
 
-var aNums = [22,11,19,45,67,44];
-
-var iMax = 0;
-
-findMax();
-
-function findMax() {
-    for(var iCount = 0; iCount < aNums.length; iCount++) {
-        if(aNums[iCount] > iMax) {
-            iMax = aNums[iCount];
-        }
-    }
-    console.log("The maximum value is " + iMax);
-}
+// var aNums = [22,11,19,45,67,44];
+//
+// var iMax = 0;
+//
+// findMax();
+//
+// function findMax() {
+//     for(var iCount = 0; iCount < aNums.length; iCount++) {
+//         if(aNums[iCount] > iMax) {
+//             iMax = aNums[iCount];
+//         }
+//     }
+//     console.log("The maximum value is " + iMax);
+// }
 
 //-----------------------------------------
 
@@ -23,47 +21,64 @@ function findMax() {
 var iSize = parseInt(prompt("Class size?"));
 var aGradesPhysics = [];
 var aGradesChemistry = [];
-var aGradesBiology;
-//
-// //ParseInt does the same as Number but removes anything other than a number from the value if input
-// //Example parseInt(abc123) will give you 123
+var aGradesBiology = [];
 
-// for(var iCount=0; iCount<iSize; iCount++) {
-//     var iGradePhysics = parseInt(prompt('Student '+(iCount+1)+': Grade for Physics out of 100'));
-//     GradesPhysics.push(iGradePhysics);
-//
-//     var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100'));
-//     aGradesChemistry.push(iGradeChemistry);
-//
-//     var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100'));
-//     aGradesBiology.push(iGradeBiology);
-// }
-//
-// // processing: calculate average grade for each student and find top grade in class
-// var aAverageGrades = [];
-//
-// for(var iCount=0; iCount<iSize; iCount++) {
-//     var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / aGradesPhysics.length;
-//     aAverageGrades.push(fAverage);
-// }
+//ParseInt does the same as Number but removes anything other than a number from the value if input
+//Example parseInt(abc123) will give you 123
+
+for(var iCount = 0; iCount < iSize; iCount++) {
+    var iGradePhysics = parseInt(prompt("Student " + (iCount+1) + ": Grade for Physics out of 100"));
+    aGradesPhysics.push(iGradePhysics);
+
+    var iGradeChemistry = parseInt(prompt("Student " +(iCount+1)+ ": Grade for Biology out of 100"));
+    aGradesChemistry.push(iGradeChemistry);
+
+    var iGradeBiology = parseInt(prompt("Student " +(iCount+1)+ ": Grade for Chemistry out of 100"));
+    aGradesBiology.push(iGradeBiology);
+}
+console.log("Physics grades are: " + aGradesPhysics, "Chemistry grades are: " + aGradesChemistry, "Biology grades are: " + aGradesBiology);
+
+// processing: calculate average grade for each student and find top grade in class
+var aAverageGrades = [];
+
+for(var iCount = 0; iCount < iSize; iCount++) {
+    var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / aGradesPhysics.length;
+    aAverageGrades.push(fAverage);
+}
+console.log("The average grades for students are: " + aAverageGrades);
+
+
+var iTopGrade = 0;
+findMaxs();
+
+function findMaxs() {
+    for(var iCount = 0; iCount < iSize.length; iCount++) {
+        if(iSize[iCount] > iTopGrade) {
+            iMaxs = iTopGrade[iCount];
+        }
+    }
+}
+    console.log("The top grade is " + iTopGrade);
+
+
 // var iTopGrade = findMaxs(aAverageGrades);
 //
 // //output: list result for each student and top grade
 //
 //
-// for(var iCount=1; iCount<aAverageGrades.length; iCount++) {
+// for(var iCount = 1; iCount < aAverageGrades.length; iCount++) {
 //     if(aAverageGrades[iCount] < 50) {
 //
-//         document.write('Student '+(iCount+1)+': Fail'+'<br>');
+//         document.write("Student " + (iCount+1) + " : Fail" + "<br>");
 //
 //     } else if(aAverageGrades[iCount] > 50 && aAverageGrades[iCount] < 80) {
 //
-//         document.write('Student '+(iCount+1)+': Pass<br>');
+//         document.write("Student " + (iCount+1) + ": Pass" + "<br>");
 //
 //     } else {
 //
-//         document.write('Student '+(iCount+1)': Pass with Distinction'+'<br>');
+//         document.write("Student " + (iCount+1) + ": Pass with Distinction" + "<br>");
 //     }
 // }
 //
-// document.write('<h1>The top overall grade is '+iTopgrade+'</h1>');
+// document.write("<h1>The top overall grade is " + iTopgrade + "</h1>");
