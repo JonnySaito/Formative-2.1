@@ -7,7 +7,6 @@ function findMax(aNums) {
             iMax = aNums[iCount];
         }
     }
-
     return iMax;
 }
 
@@ -49,7 +48,7 @@ for(var iCount=0; iCount<aAverageGrades.length; iCount++) {
 
         document.write('Student '+(iCount+1)+': Fail'+'<br>');
 
-    } else if(aAverageGrades[iCount] > 50 && aAverageGrades[iCount] < 80) {
+    } else if(aAverageGrades[iCount] >= 50 && aAverageGrades[iCount] < 80) {
 
         document.write('Student '+(iCount+1)+': Pass'+'<br>');
 
